@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block body %}
+	<h1>{{ title }}</h1>
+	<h2>User:
+		{{ user.email }}</h2>
+	{{ form_start(form) }}
+	<div class="col-md-4">
+		{{ form_label(form.surname) }}
+		{{ form_widget(form.surname) }}
+		<div class="error">
+			{{ form_errors(form.surname) }}
+		</div>
+	</div>
+	<div class="col-md-4">
+		{{ form_label(form.firstname) }}
+		{{ form_widget(form.firstname) }}
+		<div class="error">
+			{{ form_errors(form.firstname) }}
+		</div>
+	</div>
+	<div class="col-md-4">
+		{{ form_label(form.roles) }}
+		{{ form_widget(form.roles) }}
+		<div class="error">
+			{{ form_errors(form.roles) }}
+		</div>
+	</div>
+	<button class="btn btn-success">{{ button_label|default('Save') }}</button>
+	{{ form_end(form) }}
+
+{% endblock %}
